@@ -1,0 +1,353 @@
+// import React, { useState } from 'react'
+// import Propscard from './Components/Propscard'
+
+// function App() {
+//   const data=[
+//     {name:"John", profession:"Painter", image:"https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFufGVufDB8fDB8fHww", friends:false},
+//     {name:"Johnny", profession:"Painter", image:"https://images.unsplash.com/photo-1557862921-37829c790f19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww", friends:false},
+//     {name:"Rock", profession:"Painter", image:"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww", friends:false},
+//     {name:"Freddy", profession:"Painter", image:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fHww", friends:false}
+//   ]
+//   const [realdata, setdata]=useState(data);
+//   const handleClick=(cardindex)=>{
+//     setdata((previous)=>{
+//       return previous.map((item, index)=>{
+//         if(index === cardindex){
+//           return ({...item, friends:!item.friends})
+//         }
+//         return item;
+//       })
+//     })
+//   }
+//   return (
+//     <>
+//       <div className='w-full h-screen flex justify-center items-center gap-10 bg-zinc-300'>
+//         {realdata.map((item,index)=> <Propscard cardindex={index} image={item.image} name={item.name} friends={item.friends} profession={item.profession} click= {handleClick}/> )}
+//       </div>
+//     </>
+//   )
+// }
+// export default App
+
+
+// import React from 'react'
+// import React, { useState } from 'react'
+// import Propscard from './Components/Propscard'
+// function App() {
+//   const data=[
+//     {name:"Prakhar", profession:"Developer", image:"https://images.unsplash.com/photo-1716847214569-631cb7f1751c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8", friends:false},
+//     {name:"Vishal", profession:"Data Analyst", image:"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww", friends:false},
+//     {name:"Lubhit", profession:" CS", image:"https://images.unsplash.com/photo-1557862921-37829c790f19?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fHww", friends:false},
+//     {name:"Sachin", profession:"Businessman", image:"https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfHx8MA%3D%3D", friends:false}
+//   ]
+//   const [realdata, setdata]=useState(data);
+//   const handleClick = (cardindex)=>{
+//     setdata((prev)=>{
+//       return prev.map((item,index)=>{
+//         if(index === cardindex) {
+//         return ({...item, friends:!item.friends})
+//         }
+//         return item;
+//       })
+//     })
+//   }
+//   return (
+//     <>
+//       <div className='w-full h-screen flex items-center gap-10 justify-center'>
+//        {realdata.map((item, index)=> <Propscard cardindex={index} name={item.name} profession={item.profession} image={item.image} friends={item.friends} click={handleClick}/>)}
+//       </div>
+//     </>
+//   )
+// }
+// export default App
+
+
+
+//Lecture----9              State and props exercise
+
+// import React, { useState } from 'react'
+// import Propscard2 from './Components/Propscard2'
+// import Navbar from './Components/Navbar'
+
+// function App() {
+//   const data=[
+//     {image:"https://c.saavncdn.com/689/Crew-Hindi-2024-20240507161033-500x500.jpg", name:"Naina", artist:"Diljit Disanjh", added:false},
+//     {image:"https://c.saavncdn.com/252/Laapataa-Ladies-Hindi-2024-20240213151004-500x500.jpg", name:"Sajni", artist:"Arijit Singh", added: false},
+//     {image:"https://c.saavncdn.com/408/Khuda-Haafiz-Chapter-2-Agni-Pariksha-Hindi-2022-20220629120022-500x500.jpg", name:"Rubaru", artist:"Vishal Mishra", added:false},
+//     {image:"https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg", name:"Phle Bi Main", artist:"Vishal Mishra", added: false}
+//   ];
+//   const [songData, setSongData] =useState(data)
+//   const handleClick = (index) =>{
+//     setSongData((prev)=>{
+//     return prev.map((item, itemindex)=>{
+//       if(itemindex===index){
+//         return{...item, added:!item.added}
+//       }
+//       return item;
+//     })
+//     })
+//   }
+//   return (
+//     <>
+//       <div className='w-full h-screen '>
+//         <Navbar data={songData}/>
+//           <div className='px-20 flex gap-10 flex-wrap mt-10'>
+//             {songData.map((obj,index)=>(
+//             <Propscard2 index={index} name={obj.name} artist={obj.artist} image={obj.image} added={obj.added} click={handleClick}/>
+//           ))}
+            
+//           </div>
+//       </div>
+//     </>
+//   )
+// }
+
+//export default App
+
+
+
+//Lecture-----10-----Form Handling-1 --------
+// Stopping form from submitting and extracting data from it
+// Method---1--- useRef() method
+
+// import React, { useRef } from 'react'
+
+// function App() {
+//   const name=useRef(null);
+//   const age=useRef(null);
+//   const email=useRef(null);
+
+//   const handleSubmit= (event)=>{
+//     event.preventDefault();
+//     console.log(name.current.value, age.current.value, email.current.value);
+//   }
+
+//   return (
+//     <div className='p-4'>
+//      <form action="" onSubmit={handleSubmit}>
+//       <input ref={name} type="text" placeholder='name' /><br />
+//       <input ref={age} type="text" placeholder='age' /><br />
+//       <input ref={email} type="text" placeholder='email' /><br />
+//       <input type="submit" />
+//      </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Method---2---usestate() method
+
+// import React, { useState } from 'react'
+
+// function App() {
+//   const [val, setVal]=useState({name:"", email:""});
+//   const handleSubmit=(event)=>{
+//     event.preventDefault();
+//     console.log(val);
+//   }
+
+//   return (
+//     <div>
+//       <form action="" onSubmit={handleSubmit}>
+//         <input onChange={(event)=>setVal({...val, name:event.target.value})} type="text" placeholder='name' />
+//         <input onChange={(event)=>setVal({...val, email:event.target.value})} type="text" placeholder='email'/>
+//         <input type="submit"  />
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Method---3--- Form HAndling using React Hook ------
+
+// import React from 'react'
+// import { useForm } from 'react-hook-form'
+
+// function App() {
+//   const {register, handleSubmit}= useForm();
+
+//   return (
+//     <div>
+//       <form action="" onSubmit={handleSubmit(data =>console.log(data))}>
+//         <input {...register('name')} type="text" placeholder='name' />
+//         <input {...register('email')} type="text" placeholder='email'/>
+//         <input type="submit" />
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+//Lecture--11--Form--Handling--
+
+// import React, { useState } from 'react'
+// import FormCards from './Components/FormCards'
+// import Form from './Components/Form'
+
+// function App() {
+//   const [users, setUsers]=useState([1])
+//   const handleFormData=(data)=>{
+//     setUsers([...users, data])
+//   }
+//   const handleRemove=(id)=>{
+//     setUsers(()=>users.filter((item, index)=> index!=id))
+//   }
+//   return (
+//     <div className='w-full h-screen flex justify-center items-center bg-zinc-300'>
+//       <div className=' mx-auto container'>
+//         <FormCards users={users} handleRemove={handleRemove}/>
+//         <Form handleFormData={handleFormData}/>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+//Lecture--12--React-Router--Dom---
+
+// import Nav from './Components12/Nav'
+// import Routing from './utils/Routing'
+// function App() {
+//   return (
+//     <>  
+//       <Nav/>
+//       <Routing/>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+//Lecture--14 ----------------------Ajax, Api and axios-----------------------------
+
+
+// import {Link, Routes,Route } from 'react-router-dom';
+// import Effecthome from './Components12/Effecthome';
+// import Effectshow from './Components12/Effectshow';
+// import Effectservices from './Components12/Effectservices';
+
+// function App() {
+
+  
+//   return (
+//     <div className='px-[5%] py-[5%]'>
+//     <nav className='flex gap-6 font-bold justify-center'>
+//       <Link to="/">Effecthome</Link>
+//       <Link to="/effectshow">Effectshow</Link>
+//       <Link to="/effectservices">Effectservices</Link>
+//     </nav>   
+//     <hr />
+//     <Routes>
+//       <Route path="/" element={<Effecthome/>}/>
+//       <Route path="/effectshow" element={<Effectshow/>}/>
+//       <Route path="/effectservices " element={<Effectservices/>}/>
+//     </Routes>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+//Lectrre15   useEffect()------------------
+
+// import React, { useEffect, useState } from 'react'
+
+// function App() {
+//   const [first, setfirst] = useState("this is normal data");
+//   const [second, setsecond] = useState("this is large data");
+//   useEffect(()=>{
+//     console.log("Service is created");
+//     return ()=>{
+//       console.log("service is deleted");
+//     }
+//   },[second])
+
+//   return (
+//     <div className='px-[5%] py-[5%]'>
+//       <h1>{first}</h1>
+//       <button onClick={()=>setfirst("Normal data changed")} className='bg-red-300 px-3 py-1 mb-10'>Change Normal data</button>
+
+//       <h1>{second}</h1>
+//       <button onClick={()=>setsecond("Large data changed")} className='bg-sky-300 px-3 py-1'>Change Large Data</button>
+//     </div>
+//   )
+// } 
+
+// export default App
+
+
+
+//---------------------------------Redux------------------------------
+
+// import React from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { decrement, increment, incrementAsync } from './Store/Reducers/counterSlics';
+
+// function App() {
+//     const {value}= useSelector((state)=> state.counter);
+//     const dispatch = useDispatch();
+    
+//   return (
+//     <div className='m-auto container mt-5 p-5 bg-red-100'>
+//         <h1 className='text-center font-bold text-3xl text-red-400'>
+//             Counter: {value}    
+//         </h1>
+
+//         <div className='text-center mt-10'>
+//             <button onClick={()=> dispatch(increment())} className='border-2 border-red-800 py-1 px-3  mr-10'>Increment</button>
+            
+//             <button onClick={()=>dispatch(decrement())} className='border-2 border-red-800 py-1 px-3 mr-10'>Decrement</button>
+
+//             <button onClick={()=>dispatch(incrementAsync(5))} className='border-2 border-red-800 py-1 px-3 '>Increment By 5</button>
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// ---------------------------------Redux realworld problem---------------------
+
+// import React from 'react'
+// import {Link, Routes, Route} from 'react-router-dom'
+// import Home from './Redux/Home'
+// import Products from './Redux/Products'
+// import Users from './Redux/Users'
+
+// function App() {
+//   return (
+//     <div className='w-screen h-screen'>
+//         <nav className='py-5 flex justify-center gap-10'>
+//             <Link to="/">Home</Link>
+//             <Link to="/users" >Users</Link>
+//             <Link to="/products" >Products</Link>
+//         </nav>
+//         <hr />
+//         <Routes>
+//            <Route path="/" element={<Home/>} />
+//            <Route path="/users" element={<Users/>} />
+//            <Route path="/products" element={<Products/>} />
+//         </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
